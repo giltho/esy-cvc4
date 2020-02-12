@@ -10,8 +10,7 @@
       "./configure --prefix=#{self.install}",
       "cd ./build",
       "make",
-      "make check",
-      "make install"
+      "make check"
     ],
     "install": [
       "make install"

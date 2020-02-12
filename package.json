@@ -19,7 +19,7 @@
     "exportedEnv": {
       "LDFLAGS": {
         "scope": "global",
-        "val": "-L#{self.lib} -lgmp"
+        "val": "-L#{self.lib} -lcvc4"
       },
       "CPPFLAGS": {
         "scope": "global",

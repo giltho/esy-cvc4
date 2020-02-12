@@ -1,0 +1,42 @@
+{
+  "name": "esy-cvc4",
+  "version": "1.7000",
+  "description": "CVC4 packaged for esy",
+  "source": "https://github.com/CVC4/CVC4/archive/1.7.tar.gz",
+  "override": {
+    "buildsInSource": true,
+    "build": [
+      "./contrib/get-antlr-3.4",
+      "./configure --prefix=#{self.install}",
+      "cd ./build",
+      "make",
+      "make check",
+      "make install"
+    ],
+    "install": [
+      "make install"
+    ],
+    "exportedEnv": {
+      "LDFLAGS": {
+        "scope": "global",
+        "val": "-L#{self.lib} -lgmp"
+      },
+      "CPPFLAGS": {
+        "scope": "global",
+        "val": "-I#{self.install / 'include'}"
+      },
+      "LD_LIBRARY_PATH": {
+        "scope": "global",
+        "val": "#{self.lib}:$LD_LIBRARY_PATH"
+      },
+      "LIBRARY_PATH": {
+        "scope": "global",
+        "val": "#{self.lib}:$LIBRARY_PATH"
+      },
+      "CPATH": {
+        "scope": "global",
+        "val": "#{self.install / 'include'}:$CPATH"
+      }
+    }
+  }
+}

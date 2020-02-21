@@ -2,7 +2,7 @@
   "name": "esy-cvc4",
   "version": "1.7000",
   "description": "CVC4 packaged for esy",
-  "source": "https://github.com/CVC4/CVC4/archive/1.7.tar.gz",
+  "source": "https://github.com/CVC4/CVC4/archive/1.7.tar.gz#md5:eadb05f5092c4310f3bbe52745f9b7b9",
   "override": {
     "buildsInSource": true,
     "build": [
